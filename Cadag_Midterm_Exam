@@ -1,0 +1,19 @@
+grocery_names = []
+grocery_prices = []
+
+print("Enter the names and prices of 5 grocery items:")
+for i in range(5):
+    name = input(f"Enter name of item {i+1}: ")
+    price = float(input(f"Enter price of item {i+1}: "))
+    grocery_names.append(name)
+    grocery_prices.append(price)
+
+average_price = sum(grocery_prices) / len(grocery_prices)
+
+above_average_items = [grocery_names[i] for i in range(5) if grocery_prices[i] >= average_price]
+
+print("\n--- Results ---")
+print(f"Average price: {average_price:.2f}")
+print("Items with prices above or equal to the average:")
+for item in above_average_items:
+    print(item)
